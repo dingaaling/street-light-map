@@ -28,15 +28,19 @@ The app may be hosted on any platform of your choice. Here is an example of how 
 <img width="250" alt="Screen Shot 2022-03-06 at 8 10 29 PM" src="https://user-images.githubusercontent.com/5104098/156940765-a4869b01-ab1e-4810-8760-1afbfdb6c5eb.png">
 5. Follow the instructions to add Firebase to your web app
 <img width="250" alt="Screen Shot 2022-03-06 at 8 10 04 PM" src="https://user-images.githubusercontent.com/5104098/156940778-824cbdde-f2e2-4a9b-b04f-f943539a1235.png">
+
 - Note: make sure to use `yarn` instead of `npm` for installation
+
 6. Run `yarn add firebase` on the command line
 7. Set up firebase command line tools following this [documentation] (https://firebase.google.com/docs/cli#install-cli-mac-linux) to connect your app with Firebase.
-- Select the `Database` and `Hosting options for Firebase CLI features
+8.  Select the `Database` and `Hosting options for Firebase CLI features
+
 - Select `Use an existing project` and connect to the project you created in step 1.
 - Add Real-time Database using us-central1
 - Use `build` as your public directory
 - Yes, configure as a single-page app
-8. Copy the config information provided on the Project settings page (just what's inside the const firebaseConfig brackes) into `src/config.js`
-9. Run `yarn build` to compile the project and prepare for deployment
-10. Run `firebase deploy` to deploy the app
-11. Go to the Realtime Database page and select Create Database to start logging data.
+
+9. Copy the config information provided on the Project settings page (just what's inside the const firebaseConfig brackes) into `src/config.js`
+10. Run `yarn build` to compile the project and prepare for deployment
+11. Run `firebase deploy` to deploy the app
+12. Go to the Realtime Database page and select Create Database to start logging data.
