@@ -17,7 +17,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { mapCenter : [startLat, startLon], dataDict : [],
-                  icon1List : [], icon2List : [], icon3List : []};
+                  icon1List : [], icon2List : [], icon3List : [], icon4List: []};
     this.showPosition = this.showPosition.bind(this)
     this.imageClick = this.imageClick.bind(this)
     this.updateData = this.updateData.bind(this)
@@ -78,6 +78,9 @@ class App extends React.Component {
       case 2:
         this.setState({icon3List: this.state.icon3List.concat([[position.coords.latitude, position.coords.longitude]])});
         break;
+      case 3:
+        this.setState({icon4List: this.state.icon4List.concat([[position.coords.latitude, position.coords.longitude]])});
+        break;
       default:
         this.setState({mapCenter: [position.coords.latitude, position.coords.longitude]});
     };
@@ -109,7 +112,7 @@ render(){
     <div className="App">
 
       <header className="App-header">
-        <h1><center>MASK MAP</center></h1>
+        <h1><center>STREET LIGHTING MAP</center></h1>
       </header>
 
       {this.getLineSeparator()}
@@ -119,18 +122,21 @@ render(){
         icon1List = {this.state.icon1List}
         icon2List = {this.state.icon2List}
         icon3List = {this.state.icon3List}
+        icon4List = {this.state.icon4List}
         iconStatus = {this.state.iconStatus}>
       </Emojis>
 
       {<PathMap mapCenter = {this.state.mapCenter}
         icon1List = {this.state.icon1List}
         icon2List = {this.state.icon2List}
-        icon3List = {this.state.icon3List}/>
+        icon3List = {this.state.icon3List}
+        icon4List = {this.state.icon4List}/>
       }
 
     {this.getLineSeparator()}
     {this.getLineSeparator()}
-    <Box textAlign='center'><Button variant="contained"><CSVLink data={this.state.dataDict}>Download CSV</CSVLink></Button></Box>    {this.getLineSeparator()}
+    <Box textAlign='center'><Button variant="contained"><CSVLink data={this.state.dataDict}>Download CSV</CSVLink></Button></Box>
+    {this.getLineSeparator()}
     {this.getLineSeparator()}
 
 
