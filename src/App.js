@@ -3,14 +3,22 @@ import {CSVLink, CSVDownload} from 'react-csv';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 
+//Firebase
+
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
+import { firebaseConfig } from './config.js'
+
 //Internal Classes
 import Emojis from './Emojis.js';
 import PathMap from './PathMap.js'
 
 //Styling
 import './App.css'
-const startLat = 40.742997028
-const startLon = -73.96749613
+
+const startLat = 51.509865
+const startLon = -0.118092
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 class App extends React.Component {
 
@@ -66,6 +74,7 @@ class App extends React.Component {
       accuracy: position.coords.accuracy,
     };
 
+    firebaseApp.database().ref('/').push(body);
     this.setState({dataDict: this.state.dataDict.concat(body)});
 
     switch (iconStatus) {
