@@ -20,17 +20,23 @@ Data collected through Citi Map can be visualized through the map interface itse
 5. Click each image to raise to log an instance of that category. This should increment the count below that object and display its location on the map.
 6. Click the `Download CSV` button to download your session data.
 
-## Hosting the App
+## Hosting the App on Firebase
 
-The app may be hosted on any platform of your choice. Here, is an example of how to host it through Firebase. For more details, refer to [Firebase documentation](https://firebase.google.com/docs/web/setup).
-1. Run `yarn add firebase`
-2. Run `firebase init` on the command line and work through the prompts
-3. Run `yarn build`
-4. Run `firebase deploy`
+The app may be hosted on any platform of your choice. Here, is an example of how to host it through Firebase.
 
-## Connecting to a Database
-
-[TODO]
+1. Create the project on the Firebase console following Step 1 in this [documentation](https://firebase.google.com/docs/web/setup#create-firebase-project-and-app).
+2. Go to the Project Settings page in your Firebase console and select the `</>` option to add a web app
+<img width="905" alt="Screen Shot 2022-03-06 at 8 10 29 PM" src="https://user-images.githubusercontent.com/5104098/156940765-a4869b01-ab1e-4810-8760-1afbfdb6c5eb.png">
+3. Follow the instructions to add Firebase to your web app
+<img width="726" alt="Screen Shot 2022-03-06 at 8 10 04 PM" src="https://user-images.githubusercontent.com/5104098/156940778-824cbdde-f2e2-4a9b-b04f-f943539a1235.png">
+4. Copy the config information provided into `src/config.js`
+5. Go to the Real-time Database page in your Firebase console and add a Database
+6. Run `yarn add firebase` on the command line
+7. Set up firebase command line tools following this [documentation] (https://firebase.google.com/docs/cli#install-cli-mac-linux) to connect your app with Firebase.
+* Select the `Database` and `Hosting options for Firebase CLI features
+* Select `Use an existing project` and connect to the project you created in step 1.
+8. Run `yarn build` to compile the project and prepare for deployment
+9. Run `firebase deploy` to deploy the app
 
 ## Examples
 
